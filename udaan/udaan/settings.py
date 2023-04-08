@@ -27,10 +27,31 @@ SECRET_KEY = 'django-insecure-j6g5oe+*44t)v&6^noqp_28)fa5jbfg9ft009t9y887_z@&31!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'vranda25.pythonanywhere.com']
+# ALLOWED_HOSTS = ['127.0.0.1', 'vranda25.pythonanywhere.com']
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    "Access-Control-Allow-Origin"
+]
 # Application definition
 
 INSTALLED_APPS = [
