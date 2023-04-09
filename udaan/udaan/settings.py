@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-j6g5oe+*44t)v&6^noqp_28)fa5jbfg9ft009t9y887_z@&31!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['127.0.0.1', 'vranda25.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -159,7 +159,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'snohara223@gmail.com'
-EMAIL_HOST_PASSWORD = 'eywoyukouwxcsjaj'
+EMAIL_HOST_PASSWORD = ''
 
 
 REST_FRAMEWORK = {

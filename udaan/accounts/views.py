@@ -25,21 +25,28 @@ class LoginView(APIView):
                         'message': 'Invalid mail or password',
                         'data': serializer.errors,
                     })
-                is_verified = user.is_verified
-                print(is_verified)
-                if is_verified:
-                    refresh = RefreshToken.for_user(user)
-                    return Response({
-                        'status': 'Success!',
-                        'message': 'Get ready for new Udaan!!',
-                        'refresh': str(refresh),
-                        'access': str(refresh.access_token),
-                   })
-
+                refresh = RefreshToken.for_user(user)
                 return Response({
-                    'status': '400',
-                    'message': 'Please verify your mail first'
+                    'status': 'Success!',
+                    'message': 'Get ready for new Udaan!!',
+                    'refresh': str(refresh),
+                    'access': str(refresh.access_token),
                 })
+                # is_verified = user.is_verified
+                # print(is_verified)
+                # if is_verified:
+                #     refresh = RefreshToken.for_user(user)
+                #     return Response({
+                #         'status': 'Success!',
+                #         'message': 'Get ready for new Udaan!!',
+                #         'refresh': str(refresh),
+                #         'access': str(refresh.access_token),
+                #    })
+                #
+                # return Response({
+                #     'status': '400',
+                #     'message': 'Please verify your mail first'
+                # })
 
             return Response({
                 'status': 400,
@@ -64,7 +71,7 @@ class RegisterView(APIView):
                                                       is_business=serializer.data['is_business'], is_customer=serializer.data['is_customer'])
                 user.save()
                 print('2............')
-                send_verification_mail(serializer.data['email'], serializer.data['first_name'])
+                # send_verification_mail(serializer.data['email'], serializer.data['first_name'])
                 return Response({
                     'status': 200,
                     'message': 'registration successfull!! check mail',
